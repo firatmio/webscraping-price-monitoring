@@ -42,6 +42,30 @@ class WebScraper:
         self.product_price = float("".join(filter(str.isdigit, price_tag.text.strip())))
         return Product(self.product_name, self.product_price, self.url)
 
+# class App(CTk):
+#     def __init__(self):
+#         super().__init__()
+#         self.title("Price Monitor")
+#         self.geometry("1200x700")
+#         self.resizable(False, False)
+#         self.monitor = PriceMonitor()
+#         self.create_widgets()
+#         self.url = None
+        
+#     def add_product_from_entry(self, event):
+#         self.url = self.product_url_entry.get()
+#         scraper = WebScraper(self.url)
+#         product = scraper.scrape_product()
+#         self.monitor.add_product(product)
+        
+#     def create_widgets(self):
+#         self.footer = CTkFrame(self, height=60, corner_radius=0)
+#         self.footer.pack(side="bottom", fill="x")
+        
+#         self.product_url_entry = CTkEntry(self.footer, placeholder_text="Enter Product URL (Enter for result)", bg_color="transparent", border_width=0, fg_color="transparent", text_color="#d5d5d5", font=("Arial", 16))
+#         self.product_url_entry.pack(pady=10, padx=10, side="left", fill=X, expand=True)
+#         self.product_url_entry.bind("<Return>", self.add_product_from_entry)
+
 def main():
     products = []
     monitor = PriceMonitor()
@@ -53,6 +77,9 @@ def main():
         
     for product in monitor.get_all_products():
         print(f"Product: {product.name},\nPrice: {product.price},\nURL: {product.url}")
+        
+    app = App()
+    app.mainloop()
 
 if __name__ == "__main__":
     main()
