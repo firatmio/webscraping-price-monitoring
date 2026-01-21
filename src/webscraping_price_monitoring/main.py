@@ -78,8 +78,8 @@ def main():
     for product in monitor.get_all_products():
         print(f"Product: {product.name},\nPrice: {product.price},\nURL: {product.url}")
         
-    app = App()
-    app.mainloop()
+    # app = App()
+    # app.mainloop()
 
 if __name__ == "__main__":
     main()
