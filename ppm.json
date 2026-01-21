@@ -1,0 +1,16 @@
+{
+  "name": "webscraping-price-monitoring",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "python src/webscraping_price_monitoring/main.py",
+    "test": "pytest"
+  },
+  "build": {
+    "console": true,
+    "keep_build_folder": true
+  },
+  "dependencies": {
+    "bs4": "^0.0.2",
+    "win10toast": "^0.9"
+  }
+}
